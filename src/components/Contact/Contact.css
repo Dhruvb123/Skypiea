@@ -1,0 +1,44 @@
+.contact-container {
+  margin: 2rem;
+  color: inherit;
+}
+
+.contact-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #ba1ef7;
+}
+
+.contact-paragraph {
+  font-size: 1.12rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.75;
+}
+
+.contact-subtitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ba1ef7;
+}
+
+.contact-list {
+  font-size: 1.1rem;
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-list a {
+  color: #ba1ef7;
+  text-decoration: none;
+}
+
+.contact-list a:hover,
+.contact-list a:focus {
+  text-decoration: underline;
+}

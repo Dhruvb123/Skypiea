@@ -1,0 +1,26 @@
+.about-container {
+  margin: 2rem;
+  color: inherit;
+}
+
+.about-container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #ba1ef7;
+}
+
+.about-container p {
+  font-size: 1.12rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.75;
+}
+
+.about-container a {
+  color: #ba1ef7;
+  text-decoration: none;
+}
+
+.about-container a:hover,
+.about-container a:focus {
+  text-decoration: underline;
+}

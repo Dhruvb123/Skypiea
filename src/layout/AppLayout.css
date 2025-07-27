@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+.header-container {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer-container {
+  grid-area: footer;
+}
+
+.main {
+  padding: 1rem;
+  min-height: 80vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.main.dark {
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
