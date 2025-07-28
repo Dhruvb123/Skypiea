@@ -15,10 +15,9 @@ function Home() {
   const handleSearch = async () => {
     if (!query.trim()) return;
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=ab22429bbdca126cf7268c7f480db11c
-&units=metric`;
-      const futUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=ab22429bbdca126cf7268c7f480db11c
-&units=metric`;
+      const apiKey = import.meta.env.VITE_APP_OPENWEATHER_API_KEY;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=metric`;
+      const futUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${apiKey}&units=metric`;
 
       const res1 = await axios.get(url);
       console.log("Search result:", res1.data);
