@@ -1,0 +1,144 @@
+.home-container {
+  display: grid;
+  grid-template-rows: 1fr 4r 4fr;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+  min-height: 100%;
+}
+
+.searchBar-container {
+  padding: 2rem;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 500px;
+  height: 45px;
+  padding: 0 3rem 0 1rem; /* right padding for icon */
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.searchBar:focus {
+  border-color: rgb(186, 30, 247);
+  box-shadow: 0 0 2px rgba(186, 30, 247, 0.6);
+}
+
+.search-icon {
+  position: absolute;
+  right: calc(50% - 250px + 1.2rem);
+  cursor: pointer;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .searchBar {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .search-icon {
+    right: 2.5rem;
+  }
+}
+
+.today-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.future-container {
+  background-color: burlywood;
+  height: auto;
+}
+
+.today-container {
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: min-content;
+  gap: 12px 16px;
+  align-items: center;
+}
+
+/* Icon spanning 3 units */
+.today-container img {
+  grid-column: span 1;
+  justify-self: start;
+}
+
+/* Temperature spanning 2 units */
+.today-container h2 {
+  grid-column: span 2;
+  font-size: 3rem;
+  font-weight: 700;
+  justify-self: center;
+}
+
+/* City and country spanning 1 unit below icon and temp */
+.today-container h3 {
+  grid-column: span 1;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  justify-self: end;
+  align-self: end;
+}
+
+/* Rest of the details stacked vertically across full width */
+.today-container p {
+  grid-column: 1 / 7;
+  font-size: 1rem;
+  color: #555;
+  margin: 4px 0;
+  justify-self: start;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .today-container {
+    padding: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .today-container img {
+    grid-column: span 2;
+    max-width: 80px;
+    justify-self: center;
+  }
+
+  .today-container h2 {
+    grid-column: 3 / 4;
+    font-size: 2.5rem;
+    justify-self: start;
+  }
+
+  .today-container h3 {
+    grid-column: 1 / 4;
+    font-size: 1rem;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .today-container p {
+    grid-column: 1 / 4;
+    text-align: center;
+  }
+}
