@@ -7,7 +7,6 @@
   margin-right: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #444;
   box-sizing: border-box;
   height: fit-content;
 }
@@ -37,5 +36,4 @@
 
 .forecast-details {
   font-size: 0.8rem;
-  color: #555;
 }
