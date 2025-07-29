@@ -46,33 +46,44 @@ function Home() {
         />
         <SearchIcon className="search-icon" />
       </div>
-      <div className="today-container">
-        {weatherData &&
-        Array.isArray(weatherData.weather) &&
-        weatherData.weather[0] ? (
-          <>
-            <img
-              src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-              alt={weatherData.weather[0].description || "Weather icon"}
-              width={80}
-              height={80}
-            />
-            <p>{weatherData.main.temp} °C</p>
-            <p>
-              {weatherData.name}, {weatherData.sys.country}
-            </p>
 
-            <p>
-              Weather Condition: {weatherData.weather[0].main},{" "}
-              {weatherData.weather[0].description}
-            </p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Wind Speed: {weatherData.wind.speed} km/hr</p>
-          </>
-        ) : (
-          <p></p>
+      {weatherData &&
+        Array.isArray(weatherData.weather) &&
+        weatherData.weather[0] && (
+          <div className="today-container">
+            <div className="today-main-row">
+              <img
+                className="today-icon"
+                src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                alt={weatherData.weather[0].description || "Weather icon"}
+              />
+              <div className="today-main-info">
+                <div className="today-temp">
+                  {Math.round(weatherData.main.temp)}°C
+                </div>
+                <div className="today-city">
+                  {weatherData.name}, {weatherData.sys.country}
+                </div>
+              </div>
+            </div>
+            <div className="today-details">
+              <div>
+                Weather Condition:&nbsp;
+                <b>
+                  {weatherData.weather[0].main},{" "}
+                  {weatherData.weather[0].description}
+                </b>
+              </div>
+              <div>
+                Humidity: <b>{weatherData.main.humidity}%</b>
+              </div>
+              <div>
+                Wind Speed: <b>{weatherData.wind.speed} km/hr</b>
+              </div>
+            </div>
+          </div>
         )}
-      </div>
+
       <div className="future-container"></div>
     </div>
   );

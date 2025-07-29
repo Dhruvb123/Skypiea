@@ -8,18 +8,19 @@
 
 .searchBar-container {
   padding: 2rem;
-  padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  height: fit-content;
 }
 
 .searchBar {
   width: 100%;
   max-width: 500px;
   height: 45px;
-  padding: 0 3rem 0 1rem; /* right padding for icon */
+  padding: 0 3rem 0 1rem;
   border: 2px solid #ccc;
   border-radius: 25px;
   font-size: 1rem;
@@ -51,93 +52,98 @@
   }
 }
 
-.today-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-}
-
 .future-container {
   height: auto;
 }
-
 .today-container {
+  width: 100%;
+  height: fit-content;
+  max-width: 500px;
   margin: 0 auto;
-  background: #ffffff;
-  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  background: #fff;
   border-radius: 16px;
-  padding: 24px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: min-content;
-  gap: 12px 16px;
+  box-shadow: 0 8px 32px rgba(20, 20, 85, 0.1),
+    0 1.5px 6px rgba(100, 55, 210, 0.09);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2rem;
+}
+
+.today-main-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  /* The icon and right column have the same height by default via align-items */
+  gap: 18px;
+  width: 100%;
 }
 
-/* Icon spanning 3 units */
-.today-container img {
-  grid-column: span 1;
-  justify-self: start;
+.today-icon {
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
 }
 
-/* Temperature spanning 2 units */
-.today-container h2 {
-  grid-column: span 2;
-  font-size: 3rem;
+.today-main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* fills same height as icon */
+  height: 78px;
+}
+
+.today-temp {
+  font-size: 2.3rem;
   font-weight: 700;
-  justify-self: center;
+  color: #fd9b33;
 }
 
-/* City and country spanning 1 unit below icon and temp */
-.today-container h3 {
-  grid-column: span 1;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #333;
-  margin: 0;
-  justify-self: end;
-  align-self: end;
-}
-
-/* Rest of the details stacked vertically across full width */
-.today-container p {
-  grid-column: 1 / 7;
-  font-size: 1rem;
+.today-city {
+  font-size: 1.1rem;
+  margin-top: 6px;
+  font-weight: 500;
   color: #555;
-  margin: 4px 0;
-  justify-self: start;
 }
 
-/* Responsive Adjustments */
+.today-details {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  color: #47576b;
+  font-size: 1rem;
+}
+
+.today-details b {
+  color: #663ae2;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .today-container {
-    padding: 16px;
-    grid-template-columns: repeat(3, 1fr);
+    max-width: 97vw;
+    padding: 12px 5vw 14px 5vw;
   }
-
-  .today-container img {
-    grid-column: span 2;
-    max-width: 80px;
-    justify-self: center;
+  .today-main-row {
+    gap: 9px;
   }
-
-  .today-container h2 {
-    grid-column: 3 / 4;
-    font-size: 2.5rem;
-    justify-self: start;
+  .today-icon,
+  .today-main-info {
+    width: 54px;
+    height: 54px;
   }
-
-  .today-container h3 {
-    grid-column: 1 / 4;
-    font-size: 1rem;
-    text-align: center;
-    justify-self: center;
+  .today-temp {
+    font-size: 1.5rem;
   }
-
-  .today-container p {
-    grid-column: 1 / 4;
-    text-align: center;
+  .today-city {
+    font-size: 0.93rem;
+  }
+  .today-details {
+    font-size: 0.95rem;
   }
 }
