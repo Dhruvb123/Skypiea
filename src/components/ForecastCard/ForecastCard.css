@@ -1,50 +1,41 @@
 .forecast-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 0.12);
-  padding: 16px 12px;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 140px;
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   text-align: center;
-  min-width: 140px;
+  color: #444;
   box-sizing: border-box;
-  user-select: none;
+  height: fit-content;
 }
 
 .forecast-day {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 6px;
-  color: #444;
+  margin-bottom: 0.5rem;
 }
 
 .forecast-icon {
   width: 60px;
   height: 60px;
-  margin-bottom: 8px;
+  object-fit: contain;
 }
 
 .forecast-temp {
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #e67e22;
-  margin-bottom: 6px;
-}
-
-.forecast-condition {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .forecast-description {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  margin: 0.3rem 0;
 }
 
-.forecast-humidity,
-.forecast-wind {
-  font-size: 0.75rem;
-  color: #888;
-  margin: 2px 0;
+.forecast-details {
+  font-size: 0.8rem;
+  color: #555;
 }

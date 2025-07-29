@@ -1,6 +1,6 @@
 .home-container {
   display: grid;
-  grid-template-rows: 1fr 4r 4fr;
+  grid-template-rows: 1fr auto auto;
   grid-template-columns: 1fr;
   padding: 1rem;
   min-height: 100%;
@@ -8,7 +8,6 @@
 
 .searchBar-container {
   padding: 2rem;
-  padding-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,17 +15,34 @@
   height: fit-content;
 }
 
-.searchBar {
+.search-wrapper {
+  position: relative;
   width: 100%;
   max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar {
+  width: 100%;
   height: 45px;
-  padding: 0 3rem 0 1rem;
+  padding: 0 3rem 0 1rem; /* 🛠️ Right padding added back to make space for the icon */
   border: 2px solid #ccc;
   border-radius: 25px;
   font-size: 1rem;
-  transition: all 0.3s ease;
   outline: none;
   box-shadow: none;
+  box-sizing: border-box; /* Ensures padding doesn't expand the input box */
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 1.5rem;
 }
 
 .searchBar:focus {
@@ -34,89 +50,87 @@
   box-shadow: 0 0 2px rgba(186, 30, 247, 0.6);
 }
 
-.search-icon {
-  position: absolute;
-  right: calc(50% - 250px + 1.2rem);
-  cursor: pointer;
-  color: #888;
-}
-
 @media (max-width: 600px) {
   .searchBar {
     height: 40px;
     font-size: 0.9rem;
+    padding-right: 2.5rem;
   }
 
   .search-icon {
-    right: 2.5rem;
+    right: 1rem;
   }
 }
 
-.future-container {
-  height: auto;
-}
 .today-container {
-  width: 100%;
-  height: fit-content;
-  max-width: 500px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  align-items: center;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(20, 20, 85, 0.1),
-    0 1.5px 6px rgba(100, 55, 210, 0.09);
+  border-radius: 1rem;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 2rem;
+  width: fit-content;
+  max-width: 75vw;
+  margin: 2rem auto 1rem;
+  box-sizing: border-box;
+  gap: 0;
+  box-shadow: 0 0.5rem 1.5rem rgba(20, 20, 85, 0.1),
+    0 0.1rem 0.5rem rgba(100, 55, 210, 0.09);
 }
 
 .today-main-row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  width: max-content;
   align-items: center;
-  /* The icon and right column have the same height by default via align-items */
-  gap: 18px;
-  width: 100%;
+  padding: 0 1rem 1rem 0;
+  margin: 0 auto;
 }
 
 .today-icon {
-  width: 78px;
-  height: 78px;
-  flex-shrink: 0;
+  /* width: clamp(5rem, 8vw, 7.5rem);
+  height: clamp(5rem, 8vh, 7.5rem); */
   object-fit: contain;
-  display: block;
 }
 
 .today-main-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* fills same height as icon */
-  height: 78px;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
+  height: clamp(5rem, 8vh, 7.5rem);
+  justify-items: start;
 }
 
 .today-temp {
-  font-size: 2.3rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 700;
-  color: #fd9b33;
+  height: fit-content;
 }
 
 .today-city {
-  font-size: 1.1rem;
-  margin-top: 6px;
-  font-weight: 500;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
   color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-end;
+}
+
+.today-temp,
+.today-city {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
 }
 
 .today-details {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  display: grid;
+  gap: 0.4rem;
   text-align: left;
   color: #47576b;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 3vw, 1rem);
+  width: 100%;
 }
 
 .today-details b {
@@ -124,26 +138,102 @@
   font-weight: 500;
 }
 
+.forecast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 3rem 1rem 1rem 1rem;
+  max-width: 90vw;
+  scroll-snap-type: x mandatory;
+  box-sizing: border-box;
+  justify-content: center;
+  scroll-padding-left: 1rem;
+  margin: 0 auto;
+}
+
+.forecast-card:first-child {
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 300px) and (max-width: 1024px) {
+  .forecast-container {
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 90vw;
+    margin: 0;
+  }
+}
+
+.forecast-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+  background: rgba(186, 30, 247, 0.3);
+  border-radius: 4px;
+}
+
+.forecast-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.degree-button {
+  background-color: transparent;
+  color: rgb(186, 30, 247);
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.4rem;
+  margin-left: 0.3rem;
+  border-radius: 12px;
+  line-height: 1;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+  vertical-align: middle;
+}
+
+/* Hover and focus states */
+.degree-button:hover,
+.degree-button:focus {
+  background-color: rgb(120, 22, 159);
+  color: white;
+  outline: none;
+}
+
+/* Adjust button size responsively */
 @media (max-width: 600px) {
-  .today-container {
-    max-width: 97vw;
-    padding: 12px 5vw 14px 5vw;
+  .degree-button {
+    font-size: 1rem;
+    padding: 0 0.3rem;
+    margin-left: 0.2rem;
   }
-  .today-main-row {
-    gap: 9px;
-  }
-  .today-icon,
-  .today-main-info {
-    width: 54px;
-    height: 54px;
-  }
-  .today-temp {
-    font-size: 1.5rem;
-  }
-  .today-city {
-    font-size: 0.93rem;
-  }
-  .today-details {
-    font-size: 0.95rem;
+}
+
+.save-btn {
+  background-color: rgb(186, 30, 247);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 24px;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.save-btn:hover,
+.save-btn:focus {
+  background-color: rgb(120, 22, 159);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .save-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
   }
 }

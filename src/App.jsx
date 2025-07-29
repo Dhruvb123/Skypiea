@@ -8,10 +8,12 @@ import { AuthProvider } from "./context/AuthContext";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster />
       <ThemeProvider>
         <AuthProvider>
           <Routes>

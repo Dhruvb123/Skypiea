@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2vw;
-  height: 6vh;
+  height: 10vh;
   background-color: #222;
   color: white;
   user-select: none;
@@ -172,7 +172,7 @@
   .header-container {
     padding-left: 2vw;
     padding-right: 2vw;
-    height: 6vh;
+    height: 10vh;
   }
 
   .container-left {
@@ -209,6 +209,11 @@
   .logo-img {
     width: 4.5vh;
     height: 4.5vh;
+  }
+  .header-container {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 10vh;
   }
 }
 

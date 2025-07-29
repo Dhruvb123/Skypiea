@@ -1,26 +1,46 @@
+// ForecastCard.jsx
 import React from "react";
 import "./ForecastCard.css";
 
-const ForecastCard = ({ forecast }) => {
-  const icon = forecast.weather[0].icon;
-  const date = new Date(forecast.dt * 1000); // Convert UNIX timestamp to Date object
-  const day = date.toLocaleDateString(undefined, { weekday: "short" }); // e.g. "Mon"
+function ForecastCard({ data, unitSystem }) {
+  const {
+    main: { temp, temp_min, temp_max, humidity },
+    weather,
+    wind,
+    dt_txt,
+  } = data;
+
+  const icon = weather[0].icon;
+  const description = weather[0].description;
+
+  const date = new Date(dt_txt);
+  const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
 
   return (
     <div className="forecast-card">
-      <p className="forecast-day">{day}</p>
+      <div className="forecast-day">{weekday}</div>
       <img
-        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-        alt={forecast.weather[0].description}
         className="forecast-icon"
+        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+        alt={description}
       />
-      <p className="forecast-temp">{Math.round(forecast.main.temp)}°C</p>
-      <p className="forecast-condition">{forecast.weather[0].main}</p>
-      <p className="forecast-description">{forecast.weather[0].description}</p>
-      <p className="forecast-humidity">Humidity: {forecast.main.humidity}%</p>
-      <p className="forecast-wind">Wind: {forecast.wind.speed} km/h</p>
+      <div className="forecast-temp">
+        {Math.round(temp)} {unitSystem === "metric" ? "°C" : "°F"}
+      </div>
+      <div className="forecast-description">
+        High: {temp_max} {unitSystem === "metric" ? "°C" : "°F"}
+      </div>
+      <div className="forecast-description">
+        Low: {temp_min} {unitSystem === "metric" ? "°C" : "°F"}
+      </div>
+      <div className="forecast-details">
+        <div>💧 {humidity}%</div>
+        <div>
+          🌬️ {wind.speed} {unitSystem === "metric" ? "km/h" : "mph"}
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default ForecastCard;

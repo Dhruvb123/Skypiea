@@ -1,0 +1,54 @@
+[33mcommit 0c2b5ba68703d5b0b16fc63162d7abc98327cf9c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Dhruv Bheda <dhruvbheda009@gmail.com>
+Date:   Tue Jul 29 08:25:45 2025 +0530
+
+    Fix css for Today Container Component
+
+[33mcommit e9882ebea1d9d590beac416d784a3110b1f8713b[m
+Author: Dhruv Bheda <dhruvbheda009@gmail.com>
+Date:   Tue Jul 29 01:30:20 2025 +0530
+
+    Fix env file & add Forecast Card
+
+[33mcommit 1cb138539dcdb520922d1d873021fd3db84e3a60[m
+Author: Dhruv Bheda <dhruvbheda009@gmail.com>
+Date:   Tue Jul 29 01:08:14 2025 +0530
+
+    Complete Home Page Layout & API calls
+
+[33mcommit c15ac5630ffa41c6d0ee171c6c05dbd30295aaf0[m
+Author: Dhruvb123 <117813821+Dhruvb123@users.noreply.github.com>
+Date:   Sun Jul 27 22:57:51 2025 +0530
+
+    Update README.md
+
+[33mcommit fd24050e31b1f8989b46e7c4b1caf7f0ba4d9c75[m
+Author: Dhruvb123 <117813821+Dhruvb123@users.noreply.github.com>
+Date:   Sun Jul 27 22:57:30 2025 +0530
+
+    Update README.md
+
+[33mcommit 74dbd40213f4c42f8848577a3d89acb7d2f9ad50[m
+Author: Dhruvb123 <117813821+Dhruvb123@users.noreply.github.com>
+Date:   Sun Jul 27 22:57:14 2025 +0530
+
+    Update README.md
+
+[33mcommit 505a5a4fdeeeb1e6b261e0c3d78e9917705accea[m
+Merge: 6b7f462 63c6dd9
+Author: Dhruv Bheda <dhruvbheda009@gmail.com>
+Date:   Sun Jul 27 22:55:49 2025 +0530
+
+    Initial Commit
+
+[33mcommit 6b7f46239ad528171033d093ab99a58deee894b5[m
+Author: Dhruv Bheda <dhruvbheda009@gmail.com>
+Date:   Sun Jul 27 22:50:05 2025 +0530
+
+    Initial Commit
+
+[33mcommit 63c6dd96a19ce531b0dee546aab97a9e3c23f807[m
+Author: Dhruvb123 <117813821+Dhruvb123@users.noreply.github.com>
+Date:   Sun Jul 27 22:47:24 2025 +0530
+
+    Initial commit
