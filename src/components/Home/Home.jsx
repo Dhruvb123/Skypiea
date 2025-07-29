@@ -5,8 +5,11 @@ import toast from "react-hot-toast";
 
 import "./Home.css";
 import ForecastCard from "../ForecastCard/ForecastCard";
+import { useFavorites } from "../../context/FavouritesContext";
 
 function Home() {
+  const { addFavorite, favorites } = useFavorites();
+
   const [weatherData, setWeatherData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
 
@@ -17,8 +20,6 @@ function Home() {
   useEffect(() => {
     if (query.trim()) {
       handleSearch();
-    } else {
-      toast.error("Please Enter A Location!");
     }
   }, [unitSystem]);
 
@@ -60,6 +61,15 @@ function Home() {
       : setUnitSystem("metric");
   };
 
+  const handleSave = () => {
+    if (!weatherData || !weatherData.name) {
+      toast.error("No City Data To Save, Get The Data First!");
+      return;
+    }
+    addFavorite(weatherData.name);
+    toast.success(`${weatherData.name} saved!`);
+  };
+
   return (
     <div className="home-container">
       <div className="searchBar-container">
@@ -74,7 +84,9 @@ function Home() {
           />
           <SearchIcon className="search-icon" onClick={handleSearch} />
         </div>
-        <button className="save-btn">SAVE</button>
+        <button className="save-btn" onClick={handleSave}>
+          SAVE
+        </button>
       </div>
 
       {weatherData &&

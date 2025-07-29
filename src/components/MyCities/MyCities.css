@@ -1,0 +1,51 @@
+.my-cities-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.my-cities-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: rgb(186, 30, 247);
+}
+
+.my-cities-container p {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.my-city-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.city-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+.city-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.city-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.city-temp {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.25rem;
+}

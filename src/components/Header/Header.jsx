@@ -9,6 +9,7 @@ import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 import "./Header.css";
+import toast from "react-hot-toast";
 
 function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -17,11 +18,12 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleAuthClick = () => {
-    if (isLoggedIn) {
-      logout();
-    } else {
-      login({ name: "John Doe", email: "john@example.com" });
-    }
+    // if (isLoggedIn) {
+    //   logout();
+    // } else {
+    //   login({ name: "John Doe", email: "john@example.com" });
+    // }
+    toast.error("Not Implemented Yet");
     setMenuOpen(false);
   };
 
@@ -63,6 +65,14 @@ function Header() {
               }
             >
               Contact
+            </NavLink>
+            <NavLink
+              to="/mycities"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Saved
             </NavLink>
           </nav>
         </div>
