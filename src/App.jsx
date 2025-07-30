@@ -11,23 +11,34 @@ import Home from "./components/Home/Home";
 import { Toaster } from "react-hot-toast";
 import { FavoritesProvider } from "./context/FavouritesContext";
 import MyCities from "./components/MyCities/MyCities";
+import AppWrapper from "./AppWrapper";
 
 function App() {
   return (
     <>
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          style: {
+            maxWidth: "400px",
+            whiteSpace: "normal",
+            wordBreak: "break-word",
+          },
+        }}
+      />
       <ThemeProvider>
         <AuthProvider>
           <FavoritesProvider>
-            <Routes>
-              <Route path="/" element={<AppLayout />}>
-                <Route index element={<Home />} />
-                <Route path="about/" element={<About />} />
-                <Route path="contact/" element={<MyCities />}></Route>
-                <Route path="mycities/" element={<MyCities />}></Route>
-                <Route path="*" element={<>Not Found</>}></Route>
-              </Route>
-            </Routes>
+            <AppWrapper>
+              <Routes>
+                <Route path="/" element={<AppLayout />}>
+                  <Route index element={<Home />} />
+                  <Route path="about/" element={<About />} />
+                  <Route path="contact/" element={<Contact />}></Route>
+                  <Route path="mycities/" element={<MyCities />}></Route>
+                  <Route path="*" element={<>Not Found</>}></Route>
+                </Route>
+              </Routes>
+            </AppWrapper>
           </FavoritesProvider>
         </AuthProvider>
       </ThemeProvider>

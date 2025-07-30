@@ -1,20 +1,24 @@
 .forecast-card {
-  background: #fff;
+  background: var(--color-bg, #fff);
   border-radius: 1rem;
   padding: 1rem;
   width: 140px;
   flex: 0 0 auto;
   margin-right: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-light, rgba(0, 0, 0, 0.1));
   text-align: center;
   box-sizing: border-box;
   height: fit-content;
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .forecast-day {
   font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 .forecast-icon {
@@ -26,14 +30,20 @@
 .forecast-temp {
   font-size: 1.2rem;
   font-weight: bold;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 .forecast-description {
   font-size: 0.9rem;
   text-transform: capitalize;
   margin: 0.3rem 0;
+  color: var(--color-muted-text);
+  transition: color 0.3s ease;
 }
 
 .forecast-details {
   font-size: 0.8rem;
+  color: var(--color-details-text);
+  transition: color 0.3s ease;
 }

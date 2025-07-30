@@ -85,7 +85,7 @@ function Header() {
             title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
           >
             {theme === "light" ? (
-              <LightModeRoundedIcon style={{ color: "white" }} />
+              <LightModeRoundedIcon style={{ color: "black" }} />
             ) : (
               <DarkModeRoundedIcon style={{ color: "white" }} />
             )}
@@ -103,7 +103,9 @@ function Header() {
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <MenuRoundedIcon style={{ color: "white", fontSize: "2rem" }} />
+            <MenuRoundedIcon
+              style={{ color: "var(--color-text)", fontSize: "2rem" }}
+            />
           </button>
         </div>
       </header>

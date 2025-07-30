@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 .container {
   min-height: 100vh;
   display: grid;
@@ -16,24 +17,17 @@
 
 .main {
   grid-area: main;
-}
-
-.footer-container {
-  grid-area: footer;
-}
-
-.main {
-  padding: 1rem;
   min-height: 80vh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Use CSS variables for colors instead of fixed values */
 .main.light {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .main.dark {
-  background-color: #1e1e2f;
-  color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }

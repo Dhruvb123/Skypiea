@@ -1,25 +1,26 @@
 .contact-container {
   margin: 2rem;
-  color: inherit;
+  color: var(--color-text);
 }
 
 .contact-title {
   margin-bottom: 1.5rem;
   font-size: 2rem;
-  color: #ba1ef7;
+  color: var(--color-border);
 }
 
 .contact-paragraph {
   font-size: 1.12rem;
   margin-bottom: 1.3rem;
   line-height: 1.75;
+  color: var(--color-text);
 }
 
 .contact-subtitle {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #ba1ef7;
+  color: var(--color-border);
 }
 
 .contact-list {
@@ -27,6 +28,7 @@
   list-style: none;
   padding-left: 0;
   line-height: 1.8;
+  color: var(--color-muted-text);
 }
 
 .contact-list li {
@@ -34,7 +36,7 @@
 }
 
 .contact-list a {
-  color: #ba1ef7;
+  color: var(--color-border);
   text-decoration: none;
 }
 

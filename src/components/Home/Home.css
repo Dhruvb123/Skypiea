@@ -10,8 +10,10 @@
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
-  padding: 1rem;
   min-height: 100vh;
+  background-color: var(--color-bg-2);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .searchBar-container {
@@ -35,12 +37,16 @@
   width: 100%;
   height: 45px;
   padding: 0 3rem 0 1rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-border);
   border-radius: 25px;
   font-size: 1rem;
   outline: none;
   box-shadow: none;
   box-sizing: border-box;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .search-icon {
@@ -54,7 +60,7 @@
 }
 
 .searchBar:focus {
-  border-color: rgb(186, 30, 247);
+  border-color: var(--color-border);
   box-shadow: 0 0 2px rgba(186, 30, 247, 0.6);
 }
 
@@ -76,10 +82,10 @@
 
 .today-container {
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto auto;
   justify-items: center;
   align-items: center;
-  background: #fff;
+  background: var(--color-bg);
   border-radius: 1rem;
   padding: 2rem;
   width: fit-content;
@@ -87,8 +93,10 @@
   margin: 2rem auto 1rem;
   box-sizing: border-box;
   gap: 0;
-  box-shadow: 0 0.5rem 1.5rem rgba(20, 20, 85, 0.1),
-    0 0.1rem 0.5rem rgba(100, 55, 210, 0.09);
+  box-shadow: 0 0.5rem 1.5rem var(--box-shadow-light),
+    0 0.1rem 0.5rem var(--box-shadow-accent);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .today-main-row {
@@ -101,9 +109,13 @@
   margin: 0 auto;
 }
 
+@media (max-width: 400px) {
+  .searchBar-container {
+    padding: 2rem;
+  }
+}
+
 .today-icon {
-  /* width: clamp(5rem, 8vw, 7.5rem);
-  height: clamp(5rem, 8vh, 7.5rem); */
   object-fit: contain;
 }
 
@@ -113,19 +125,25 @@
   align-content: center;
   height: clamp(5rem, 8vh, 7.5rem);
   justify-items: start;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 .today-temp {
   font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 700;
   height: fit-content;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 .today-city {
   font-size: clamp(1rem, 3.5vw, 1.25rem);
+  color: var(--color-muted-text);
   font-weight: 500;
   display: flex;
   align-items: flex-end;
+  transition: color 0.3s ease;
 }
 
 .today-temp,
@@ -141,13 +159,17 @@
   text-align: left;
   font-size: clamp(0.95rem, 3vw, 1rem);
   width: 100%;
+  color: var(--color-details-text);
+  transition: color 0.3s ease;
 }
 
 .today-details b {
   font-weight: 500;
+  color: var(--color-border);
+  transition: color 0.3s ease;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 400px) and (max-width: 600px) {
   .today-container {
     padding: 1rem;
     max-width: 75vw;
@@ -159,7 +181,7 @@
   display: flex;
   overflow-x: auto;
   gap: 1rem;
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 3rem 1rem 3rem 1rem;
   max-width: 90vw;
   scroll-snap-type: x mandatory;
   box-sizing: border-box;
@@ -178,7 +200,6 @@
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 90vw;
-    margin: 0;
   }
 }
 
@@ -187,7 +208,7 @@
 }
 
 .forecast-container::-webkit-scrollbar-thumb {
-  background: rgba(186, 30, 247, 0.3);
+  background: var(--color-border);
   border-radius: 4px;
 }
 
@@ -197,11 +218,11 @@
 
 .degree-button {
   background-color: transparent;
-  color: rgb(186, 30, 247);
+  color: var(--color-border);
   font-weight: 700;
   font-size: 1.2rem;
   cursor: pointer;
-  padding: 0 0.4rem;
+  padding: 0.1rem 0.5rem;
   margin-left: 0.3rem;
   border-radius: 12px;
   line-height: 1;
@@ -212,7 +233,7 @@
 
 .degree-button:hover,
 .degree-button:focus {
-  background-color: rgb(120, 22, 159);
+  background-color: var(--color-purple-dark);
   color: white;
   outline: none;
 }
@@ -226,8 +247,8 @@
 }
 
 .save-btn {
-  background-color: rgb(186, 30, 247);
-  color: white;
+  background-color: var(--color-border);
+  color: var(--color-text, white);
   border: none;
   padding: 10px 22px;
   font-size: 1rem;
@@ -241,7 +262,7 @@
 
 .save-btn:hover,
 .save-btn:focus {
-  background-color: rgb(120, 22, 159);
+  background-color: var(--color-purple-dark);
   outline: none;
 }
 

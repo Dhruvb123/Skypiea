@@ -50,7 +50,10 @@ function Home() {
       console.log("Forecasting Data: \n", forecastData);
       setForecastData(forecastData);
     } catch (error) {
-      toast.error(error.response.data.message.toUpperCase());
+      toast.error(
+        "Something went wrong in while fetching the data. Please contact admin!"
+      );
+      console.log(error);
     }
   };
 

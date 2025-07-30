@@ -8,10 +8,10 @@
   align-items: center;
   padding: 2vw;
   height: 10vh;
-  background-color: #222;
-  color: white;
+  background-color: var(--color-bg, #222);
+  color: var(--color-text, white);
   user-select: none;
-  box-shadow: 0 2px 4px rgba(11, 11, 11, 0.1);
+  box-shadow: 0px 2px 8px var(--box-shadow-header);
   position: relative;
   z-index: 100;
 }
@@ -38,7 +38,7 @@
 }
 
 .nav-link {
-  color: white;
+  color: var(--color-text, white);
   text-decoration: none;
   padding: 0.25rem 0.3rem;
   border-radius: 0.25rem;
@@ -48,12 +48,12 @@
 }
 
 .nav-link:hover {
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.6);
 }
 
 .active {
   font-weight: 700;
-  border-bottom: 2px solid rgb(186, 30, 247);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .container-right {
@@ -80,9 +80,9 @@
 }
 
 .auth-button {
-  background-color: rgb(186, 30, 247);
+  background-color: var(--color-border);
   border: none;
-  color: white;
+  color: var(--color-text, white);
   padding: 0.4rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -93,7 +93,7 @@
 }
 
 .auth-button:hover {
-  background-color: rgb(186, 30, 247);
+  background-color: rgb(120, 22, 159);
 }
 
 .desktop-only {
@@ -106,7 +106,7 @@
 
 .menu-icon {
   font-size: 1.5rem;
-  color: white;
+  color: var(--color-text, white);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -231,8 +231,8 @@
 }
 
 .menu-panel {
-  background: #222;
-  color: white;
+  background: var(--color-bg, #222);
+  color: var(--color-text, white);
   width: 250px;
   max-width: 80vw;
   padding: 2rem 1.5rem;

@@ -9,3 +9,42 @@
 * {
   font-family: "Roboto";
 }
+
+:root {
+  --color-text: #000000;
+  --color-bg: #ffffff;
+  --color-bg-2: #f7f7fb9d;
+  --color-border: rgb(186, 30, 247);
+  --color-purple: rgb(186, 30, 247);
+  --color-purple-dark: rgb(120, 22, 159);
+  --color-muted-text: #555555;
+  --color-details-text: #47576b;
+  --color-box-shadow-light: rgba(20, 20, 85, 0.1);
+  --color-box-shadow-accent: rgba(100, 55, 210, 0.09);
+  --box-shadow-light: rgba(20, 20, 85, 0.1);
+  --box-shadow-accent: rgba(100, 55, 210, 0.09);
+  --box-shadow-footer: rgba(0, 0, 0, 0.15);
+  --box-shadow-header: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+  --color-text: #ffffff;
+  --color-bg: #1e1e2f;
+  --color-bg-2: #1a1a31;
+  --color-border: rgb(186, 30, 247);
+  --color-purple: rgb(186, 30, 247);
+  --color-purple-dark: rgb(120, 22, 159);
+  --color-muted-text: #bbb;
+  --color-details-text: #9ea7bf;
+  --color-box-shadow-light: rgba(255, 255, 255, 0.15);
+  --color-box-shadow-accent: rgba(186, 30, 247, 0.3);
+  --box-shadow-light: rgba(255, 255, 255, 0.15);
+  --box-shadow-accent: rgba(186, 30, 247, 0.3);
+  --box-shadow-footer: rgba(0, 0, 0, 0.7);
+  --box-shadow-header: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
